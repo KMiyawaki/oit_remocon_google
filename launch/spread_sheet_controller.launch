@@ -1,0 +1,11 @@
+<launch>
+    <arg name="command_time" default="1.5"/>
+    <arg name="linear_vel" default="0.2"/>
+    <arg name="angular_vel" default="0.349066"/>
+    <node pkg="oit_remocon_google" name="spread_sheet_controller" type="spread_sheet_controller.py" output="screen">
+        <param name="spread_sheet_key" value="$(env GOOGLE_SPREAD_SHEET)"/>
+        <param name="command_time" value="$(arg command_time)"/>
+        <param name="linear_vel" value="$(arg linear_vel)"/>
+        <param name="angular_vel" value="$(arg angular_vel)"/>
+    </node>
+</launch>
